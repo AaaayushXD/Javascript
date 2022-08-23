@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+  </head>
+  <link rel="stylesheet" href="index.css" />
+  <body>
+    <!-- Navigation -> Top section  -->
+    <section>
+      <nav>
+        <button type="reset" class="reset">Again!</button>
+        <p class="range">Between 1 and 20 only...</p>
+      </nav>
+    </section>
+
+    <!-- Main Body -->
+    <section>
+      <h1>Guess My Number!!</h1>
+      <main class="container">
+        <div class="first">
+          <div class="box"><p class="number">?</p></div>
+          <div class="line"></div>
+        </div>
+        <div class="content">
+          <div class="second">
+            <input type="number" name="guess" class="guess" max="20" min="1" />
+            <button class="btn check" type="submit">Check</button>
+          </div>
+          <div class="third">
+            <p class="message">Start Guessing....</p>
+            <p class="score">💯 Score: <span class="start">0</span></p>
+            <p class="highscore">🥇 Highscore: <span class="high">0</span></p>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Copyright -->
+    <section>
+      <footer>
+        <p>Copyright reserved @Aayush Lamichhane.</p>
+      </footer>
+    </section>
+  <script src="./index.js"></script>
+  </body>
+</html>
