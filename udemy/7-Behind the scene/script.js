@@ -30,16 +30,16 @@ calcAge(1992);
 //Hoisting Example
 
 console.log(me);
-// console.log(job);
-// console.log(years);
+ console.log(job);
+ console.log(years);
 
 var me = 'Aayush';
 let job = 'Student';
 const years = 2004;
 
 console.log(add(2, 3));
-// console.log(addEx(2,3));
-// console.log(addArrow(2, 3));
+ console.log(addEx(2,3));
+ console.log(addArrow(2, 3));
 
 function add(a, b) {
     return a + b;
@@ -64,17 +64,107 @@ function deleteCart() {
 }*/
 
 
-console.log(this);
+// console.log(this);
 
-const calcAge = function (birthYear) {
-    console.log(2022 - birthYear);
-    console.log(this);
+// const calcAge = function (birthYear) {
+//     console.log(2022 - birthYear);
+//     console.log(this);
+// }
+// calcAge(2004);
+
+
+// const calcAgeArrow  = (birthYear) => {
+//     console.log(2022 - birthYear);
+//     console.log(this);
+// }
+// calcAgeArrow(2000);
+
+/*
+
+const jonas = {
+    firstName: 'Aayush',
+    year: 2004,
+    calcAge: function () {
+        console.log(2022-this.year);
+        
+        const self = this;
+
+        const isMillenial = function () {
+            console.log(self);
+            console.log(self.year);
+        }
+        isMillenial();
+    }    
 }
-calcAge(2004);
+jonas.calcAge();
 
-
-const calcAgeArrow  = (birthYear) => {
-    console.log(2022 - birthYear);
-    console.log(this);
+const addEx = function (a, b) {
+    console.log(arguments);
+    return a + b;
 }
-calcAgeArrow(2000);
+addEx(2, 5);
+
+
+//argument are only aviavle for normal function and cant be used in arrow function.
+var addArrow = (a, b) => {
+    console.log(arguments);
+    return a + b;
+}
+
+addArrow(2, 5); 
+
+let age = 18;
+let oldAge = age;
+age = 19;
+console.log(age, oldAge); //119, 18
+
+
+const me = {
+    name: 'Aayush',
+    age: 18
+};
+
+const friend = me;
+friend.age = 20; // changes age of both to 20
+
+//they point to same object in memory so by changng one, both value gets changed.
+console.log('Friend: ', friend); //age = 20
+console.log('Me: ', me);    //age = 20   
+
+
+//primitive values are saved in each piece in memory stack
+let lastName = 'Lamichhane';
+let oldLastName = lastName;
+lastName = 'blah';
+console.log(lastName, oldLastName);  //blah, lamichhane
+
+//reference type
+const Aayush = {
+    firstName: 'Aayush',
+    lastName: 'Lamichhane',
+    age: 18,
+};
+
+//this doesnt create new object in heap..it just ppoint to same memory address.
+// const aayushchanged = Aayush;
+// aayushchanged.lastName = 'blah';
+
+
+//copying object
+const Aayush2 = {
+    firstName: 'Aayush',
+    lastName: 'Lamichhane',
+    age: 18,
+    family: ['Abcd', 'asds', 'sgvc'],
+};
+
+//object.assign only works in first lvl of copying.. it means it only copy primitives but cant deep clone array and objects inside another
+const copy = Object.assign({}, Aayush2);
+copy.lastName = 'blah';
+
+
+copy.family.push('mvnm');
+copy.family.push('sdsd');
+
+console.log('Unchanged: ', Aayush2);
+console.log('Changed: ', copy); */
