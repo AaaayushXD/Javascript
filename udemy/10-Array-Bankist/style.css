@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); 
+
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000;
+    border-radius: 20px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'sans-serif';
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    overflow:scroll;
+}
+
+
+/* TO hide until it is active  */
+main, nav, .welcome{
+    opacity: 0;
+    transition: all .2s ease-out;
+    z-index: -1;
+
+}
+
+main.active, nav.active, .welcome.active{ 
+    opacity: 100;
+    transition: all .5s ease-in-out;
+    z-index: 1;
+}
+
+/* Welcome page */
+
+
+.welcome.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.login_text {
+    font-size: 1.5em;
+}
+
+h1,.login_text {
+    margin: 18px;
+    color: white;
+    letter-spacing: .5rem;
+}
+
+form {
+    margin: 1.5rem;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login {
+    margin: .5rem;
+    width: 250px;
+    height: 35px;
+    border-radius: 30px;
+    padding: 13px;
+    font-size: 1rem;
+}
+
+.login:focus {
+    outline: 0;
+}
+
+.login:nth-child(3) {
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    background-color: rgb(12, 11, 11);
+    color: rgba(231, 226, 226, 0.908);
+    border: transparent;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.login:nth-child(3):hover {
+    background-color: aliceblue;
+    color: black;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+
+/*                              Main page                           */
+
+
+/* Navigation bar */
+nav.active {
+    margin: 5px 10px;
+    position: absolute;
+    top: 10px;
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+}
+
+i.fa-user {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.navicon {
+    position: relative;
+    top: -20px;
+}
+
+a {
+    text-decoration: none;
+    cursor: default;
+}
+
+.logout {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,162,39,0.9912917271407837) 0%, rgba(15,121,9,1) 65%);
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    color: antiquewhite;
+    border: transparent;
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 0 7px 9px -4px rgba(172, 255, 47, 0.874);
+}
+
+.logout:hover {
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(35,244,77,0.9912917271407837) 0%, rgba(39,232,28,1) 31%);
+    color: #010101;
+}
+
+
+/* Body */
+
+
+.container{
+    color: white;
+    position: absolute;
+    top: 110px;
+    left: 10px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Balance */
+.balance {
+    display: flex;
+    min-width: 70vw;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin:20px 5px;
+}
+
+h3 { 
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    letter-spacing: .2rem;
+}
+
+.label_date {
+    color: #8c8c8c;
+    margin-top: 0px;
+}
+
+.total {
+    font-size: 2em;
+    letter-spacing: .1rem;
+}
+
+/* Brief */
+.brief {
+    position: relative;
+    width: 80%;
+    padding: 0% 3%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Movements */
+.movement {
+    background-color: #201f1fd2;
+    position: relative;
+    width: 600px;
+    min-width: fit-content;
+    height: 425px;
+    margin-right: 20px;
+    border-radius: 20px;
+    overflow-y: scroll;
+}
+
+.transaction {
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid #8c8c8c;
+    box-shadow: 0px 4px 6px gray;
+    display: flex;
+    padding: 5px 10px;
+    font-size: 20px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease-in;
+}
+
+.transaction:nth-last-child(1) {
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.act {
+    color: #8c8c8c;
+    font-size: 12px ;
+    margin: 0px 15px;
+}
+
+.move {
+    font-size: 15px;
+    padding: 3px 5px;
+    border-radius: 30px;
+}
+
+.deposite {
+    background: linear-gradient(0deg, rgba(0,128,55,1) 0%, rgba(63,253,45,1) 100%);
+}
+
+.withdraw {
+    background: linear-gradient(0deg, rgba(193,25,25,1) 0%, rgba(125,1,1,1) 100%);
+}
+
+
+/* Activity */
+.activity {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.action {
+    width: 400px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #010101;
+    border-radius: 10px;
+}
+
+.action:nth-child(1) {
+    margin-top: 0;
+}
+
+h4 {
+    font-size: 18px;
+    letter-spacing: 1.8px;
+}
+
+.do {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 10px;
+}
+
+.do input {
+    margin: 0px 10px;
+    border-radius: 20px;
+    padding: 8px;
+    height: 30px;
+    font-size: 15px;
+    width: 150px;
+}
+input:focus {
+    outline: 0;
+}
+
+.transfer {
+    background: linear-gradient(0deg, rgba(186,195,34,1) 0%, rgba(253,187,45,1) 96%);;
+}
+
+.delete {
+    background: linear-gradient(0deg, rgba(195,34,43,1) 0%, rgba(253,111,45,1) 96%);
+}
+
+.rgb {
+    background-color: transparent;
+    border: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input[type = "number"], .user-id, .transfer-id {
+    border: transparent;
+}
+
+.green:focus {
+    background-color: rgba(107, 244, 112, 0.874);
+}
+
+.yellow:focus{
+    background-color: rgb(255, 255, 150);
+}
+
+.red:focus {
+    background-color: rgb(255, 159, 159);
+}
+
+
+/* Summary */
+
+.summary {
+    display: flex;
+    width: 80vw;
+    justify-content: space-evenly;
+}
+
+.in {
+    margin-left: 5px;
+    font-size: 20px;
+    color: greenyellow;
+}
+
+.out {
+    margin-left: 5px;
+    font-size: 20px;
+    color: red;
+}

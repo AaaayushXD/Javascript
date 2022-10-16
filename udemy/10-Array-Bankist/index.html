@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./logo/logo-black-small.png" />
+    <title>Banking App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Welcome Page -->
+    <div class="welcome active">
+        <img src="./logo/logo-no-background.png" alt="Logo" width="400px" class="logo">
+        <h1>Welcome</h1>
+        <p class="login_text">Login to get Started</p>
+        <form>
+            <input type="text" placeholder="Username" class="login user">
+            <input type="password" placeholder="Pin" maxlength="4" class="login pin">
+            <button class="btn login submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar ">
+        <i class="fa-solid fa-user icon"></i>
+        
+        <img src="./logo/logo-black-small.png" alt="Logo" width="200px" class="logo navicon">
+       <a href="#"><button class="logout">Log out</button></a>
+    </nav>
+
+    <!-- Main Body -->
+    <main>
+        <div class="container">
+
+            <!-- Balance -->
+            <div class="balance">
+                <div class="left">
+                    <p class="id" style="font-size: 30px;">Welcome back, <span id="id">Aayush</span>.</p>
+                    <h3>Current Balance</h3>
+                    <p class="label_date"></p>
+                </div>
+                <div class="right">
+                    <p class="total"></p>
+                </div>
+            </div>
+
+            <div class="brief">
+
+
+                <!-- Movement -->
+                <div class="movement">
+                <!-- Data is inserted from array or from user input -->
+                </div>
+
+
+                <!-- Activity -->
+                <div class="activity">
+                <!-- Transfer -->
+                <div class="transfer action">
+                    <h4>Transfer Money</h4>
+                    <form class="do give">
+                        <input type="text" maxlength="10" placeholder="Transfer to..." class="yellow transfer-id"> 
+                        <input type="number" maxlength="10" placeholder="Amount (in Rs)" class="yellow transfer-amount">
+                        <button class="rgb send"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <!-- Request loan -->
+                <div class="deposite action">
+                    <h4>Deposite Money</h4>
+                    <form class="do take">
+                        <input type="number" maxlength="10" placeholder="Amount (in Rs)" class="green deposit-amount">
+                        <button class=" rgb receive"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                <!-- Delete -->
+                <div class="delete action">
+                    <h4>Delete Account</h4>
+                    <form class="do remove">
+                        <input type="text" maxlength="10" placeholder="Enter username" class="red user-id">
+                        <input type="number" maxlength="10" placeholder="Enter pin" class="red user-pin">
+                        <button class="rgb throw"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <!-- Summary -->
+            <div class="summary">
+                <p>IN   <span class="in income"></span></p>
+                <p>OUT   <span class="out outgoing"></span></p>
+                <p>Intrest <span class="in intrest"></span></p>
+
+                <p>You will be logged out in <span class="timer"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- All rights reserved. Thank you!! -->
+    </footer>
+    <script src="./bank.js"></script>
+</body>
+</html>
